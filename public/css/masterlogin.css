@@ -1,0 +1,114 @@
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Lato, sans-serif;
+  background-image: url('../img/bg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+body:before{
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	bottom: 0;
+  	background-color: rgba(0, 0, 0, 0.55);
+  	content: "";
+    z-index: -21;
+}
+
+.header h1{
+  position: absolute;
+  top: 100px;
+  left: 150px;
+  z-index: 21;
+  color: #fff;
+  font-weight: lighter;
+}
+
+.container{
+  position: absolute;
+  top: 250px;
+  right: 200px;
+  width: 350px;
+}
+
+.container h2{
+  color: #fff;
+  font-weight: lighter;
+  margin-bottom: 10px;
+}
+
+.warp{
+  width: 90%;
+  max-width: 500px;
+  padding: 40px;
+  margin: auto;
+}
+
+.formulario{
+  width: 100%;
+  margin: auto;
+}
+
+.input-group{
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input[type="name"],
+.input-group input[type="password"]{
+  color: #fff;
+  font-size: 18px;
+  width: 100%;
+  background: none;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  margin-top: 10px;
+}
+
+.input-group input[type="name"]:focus,
+.input-group input[type="password"]:focus {
+  border-bottom: 1px solid rgb(73, 61, 214);
+}
+
+label{
+  position: relative;
+  color: #fff;
+  font-weight: lighter;
+}
+
+input#btn-submit{
+  position: relative;
+  float: right;
+  right: 10px;
+  width: 100px;
+  font-size: 20px;
+  color: #fff;
+  background-color: rgb(39, 107, 208);
+  border: none;
+  padding: 5px;
+  outline: none;
+}
+
+input#btn-submit:hover{
+  background-color: rgb(33, 94, 184);
+  cursor: pointer;
+}
+
+.messages{
+  position: relative;
+  float: left;
+  color: rgb(231, 35, 35);
+}
