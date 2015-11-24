@@ -9,7 +9,7 @@ use Session;
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\Helper;
 
-class ProfileController extends Controller
+class PrincipalController extends Controller
 {
 
     public function data(){

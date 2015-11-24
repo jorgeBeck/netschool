@@ -16,15 +16,19 @@ class LoginController extends Controller
       $pass = Request::input('password','');
 
     $users = DB::table('users')
-    ->select('id')
+    ->select('id','privilegios')
     ->where('name','=',$name)
     ->where('password','=',$pass)
     ->get();
 
     if(count($users) == 1){
-        Request::session()->put('id',$users[0]->id);
-        Request::session()->put('logged', true);
+      Request::session()->put('id',$users[0]->id);
+      Request::session()->put('logged', true);
+      if ($users[0]->privilegios == 1){
         return redirect('principal');
+      }elseif ($users[0]->privilegios == 2) {
+        return 'Perfil Maestro';
+      }
     }else {
       Session::flash('error_message', "Tus datos son incorrectos.");
       return Redirect::to('login');

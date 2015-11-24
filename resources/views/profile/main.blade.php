@@ -5,6 +5,7 @@
   <title>@yield('title')</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
   <link href="./css/main.css" rel="stylesheet">
+  <link href="./css/profile.css" rel="stylesheet">
   <script src="./js/main.js"></script>
 </head>
 <body>
@@ -23,9 +24,7 @@
   <p>Para comenzar, selecciona una categoria del menu de la izquierda.</p>
 </div>
 
-<div class="image">
-  
-</div>
+
 
 
 

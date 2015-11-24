@@ -5,7 +5,7 @@
     <a href="principal">Inicio</a>
   </div>
   <div class="menu-group">
-    <a href="#">Perfil</a>
+    <a href="perfil">Perfil</a>
   </div>
   <div class="menu-group">
     <a href="calificaciones">Calificaciones</a>
