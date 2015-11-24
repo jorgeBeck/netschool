@@ -1,4 +1,4 @@
-@extends('profile.main')
+@extends('profile.calificaciones')
 
 @section('menu')
   <div class="menu-group active">

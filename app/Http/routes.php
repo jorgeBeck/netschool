@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('login', function(){
@@ -22,6 +22,6 @@ Route::get('login', function(){
 Route::post('login', 'LoginController@login');
 Route::match(['get', 'post'],'logout', 'LoginController@logout');
 
-Route::get('helper', 'helpertestController@getIndex');
-
 Route::get('principal', 'ProfileController@devolver');
+
+Route::get('calificaciones', 'PromedioController@devolver');

@@ -2,93 +2,59 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests;
+use DB;
+use Request;
+use Redirect;
+use Session;
 use App\Http\Controllers\Controller;
+use App\Http\Helpers\Helper;
 
 class PromedioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    public function promedio()
-    {
-      $calificacion1 = 100;
-      $calificacion2 = 90;
-      $promedio = ($calificacion1 + $calificacion2)/2;
-      return view('inicio', compact('promedio'));
-    }
+  public function data(){
+    $users = DB::table('users')
+    ->select('id','name','email','nombre')
+    ->where('id','=',session('id'))
+    ->get();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    Request::session()->has('id',$users[0]->id);
+    $datos = $users[0]->id.$users[0]->nombre;
+    $nombre = $users[0]->nombre;
+    return $nombre;
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  public function promedio(){
+    $users = DB::table('curso')
+    ->select('id_materia','calificacion_1','calificacion_2','calificacion_3')
+    ->where('id', '=', session('id'))
+    ->get();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+    Request::session()->has('id',$users[0]->id_materia);
+    $promedio = $users[0]->calificacion_1;
+    $promedio2 = $users[0]->calificacion_2;
+    $promedio3 = $users[0]->calificacion_3;
+    $promedio_total = ($promedio + $promedio2 + $promedio3)/3;
+    return $promedio_total;
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+  public function materia(){
+    $users = DB::table('curso')
+    ->select('id_materia','calificacion_1','calificacion_2','calificacion_3')
+    ->where('id', '=', session('id'))
+    ->get();
+      Request::session()->has('id',$users[0]->id_materia);
+    if ($users[0]->id_materia = 1) {
+      $nombre_materia = 'Español';
     }
+    return $nombre_materia;
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+  public function devolver(){
+    $nombre = $this->data();
+    $promedio_total = $this->promedio();
+    $nombre_materia = $this->materia();
+    return view('calificacion', compact('nombre','promedio_total','nombre_materia'));
+    return Helper::isLogged();
+  }
 }

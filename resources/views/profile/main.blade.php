@@ -18,8 +18,13 @@
     @yield('menu')
 </div>
 
-<div class="promedio">
-  <center><h1>Promedio:</h1> {{ $promedio }}</center>
+<div class="center">
+  <h1>Bienvenido a la plataforma NetSchool</h1>
+  <p>Para comenzar, selecciona una categoria del menu de la izquierda.</p>
+</div>
+
+<div class="image">
+  
 </div>
 
 

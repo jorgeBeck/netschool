@@ -80,3 +80,20 @@ div.promedio{
   top: 100px;
   left: 40%;
 }
+
+.center{
+  text-align: center;
+}
+
+.image{
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+  height: 200px;
+  max-width: auto;
+  width: 600px;
+  background-image: url('../img/bg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
