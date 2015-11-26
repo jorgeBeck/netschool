@@ -25,7 +25,7 @@ class LoginController extends Controller
       Request::session()->put('id',$users[0]->id);
       Request::session()->put('logged', true);
       if ($users[0]->privilegios == 1){
-        return redirect('principal');
+        return redirect('alumno/principal');
       }elseif ($users[0]->privilegios == 2) {
         return 'Perfil Maestro';
       }

@@ -22,8 +22,6 @@ Route::get('login', function(){
 Route::post('login', 'LoginController@login');
 Route::match(['get', 'post'],'logout', 'LoginController@logout');
 
-Route::get('principal', 'PrincipalController@devolver');
-
-Route::get('calificaciones', 'PromedioController@devolver');
-
-Route::get('perfil', 'PerfilController@devolver');
+Route::get('alumno/principal', 'PrincipalController@devolver');
+Route::get('alumno/calificaciones', 'PromedioController@devolver');
+Route::get('alumno/perfil', 'PerfilController@devolver');

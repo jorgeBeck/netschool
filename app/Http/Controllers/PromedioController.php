@@ -24,18 +24,13 @@ class PromedioController extends Controller
     return $nombre;
   }
 
-  public function promedio(){
+  public function calificaciones(){
     $users = DB::table('curso')
     ->select('id_materia','calificacion_1','calificacion_2','calificacion_3')
     ->where('id', '=', session('id'))
     ->get();
 
-    Request::session()->has('id',$users[0]->id_materia);
-    $promedio = $users[0]->calificacion_1;
-    $promedio2 = $users[0]->calificacion_2;
-    $promedio3 = $users[0]->calificacion_3;
-    $promedio_total = ($promedio + $promedio2 + $promedio3)/3;
-    return $promedio_total;
+    return $users;
   }
 
   public function materia(){
@@ -44,17 +39,19 @@ class PromedioController extends Controller
     ->where('id', '=', session('id'))
     ->get();
       Request::session()->has('id',$users[0]->id_materia);
-    if ($users[0]->id_materia = 1) {
+    if ($users[0]->id_materia == 1) {
       $nombre_materia = 'Español';
+    }elseif ($users[0]->id_materia == 2) {
+      $nombre_materia = 'Matematicas';
     }
     return $nombre_materia;
   }
 
   public function devolver(){
     $nombre = $this->data();
-    $promedio_total = $this->promedio();
+    $arreglo = $this->calificaciones();
     $nombre_materia = $this->materia();
-    return view('calificacion', compact('nombre','promedio_total','nombre_materia'));
+    return view('calificacion', compact('nombre','arreglo','nombre_materia'));
     return Helper::isLogged();
   }
 }
