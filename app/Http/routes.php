@@ -25,3 +25,7 @@ Route::match(['get', 'post'],'logout', 'LoginController@logout');
 Route::get('alumno/principal', 'PrincipalController@devolver');
 Route::get('alumno/calificaciones', 'PromedioController@devolver');
 Route::get('alumno/perfil', 'PerfilController@devolver');
+
+Route::get('maestro/principal', 'PrincipalProfController@devolver');
+Route::get('maestro/perfil', 'PerfilProfController@devolver');
+Route::get('maestro/grupos', 'GruposProfController@devolver');

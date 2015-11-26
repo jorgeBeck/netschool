@@ -16,18 +16,19 @@
 </nav>
 
 <div class="menu">
-    @yield('menu')
+  @yield('menu')
 </div>
 
-<div class="center">
-  <h1>Bienvenido a la plataforma NetSchool</h1>
-  <p>Para comenzar, selecciona una categoria del menu de la izquierda.</p>
+<div class="datos">
+  <div class="center">
+    <h2>Nombre: {{ $nombre }}</h2>
+    <h2>Email: {{ $email }}</h2>
+  </div>
 </div>
 
+<div class="foto">
 
-
-
-
+</div>
 
 </body>
 </html>

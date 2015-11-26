@@ -10,24 +10,21 @@
 </head>
 <body>
 
-<nav>
-  <h1>Bienvenido, {{ $nombre }}</h1>
-  <button><a href="../logout" type="button">Cerrar Sesion</a></button>
-</nav>
 
-<div class="menu">
-    @yield('menu')
-</div>
+  <nav>
+    <h1>Bienvenido, {{ $nombre }}</h1>
+    <button><a href="../logout" type="button">Cerrar Sesion</a></button>
+  </nav>
+
+  <div class="menu">
+      @yield('menu')
+  </div>
 
 <div class="center">
-  <h1>Bienvenido a la plataforma NetSchool</h1>
-  <p>Para comenzar, selecciona una categoria del menu de la izquierda.</p>
+  <div class="grupos">
+    IMPRIMIR TABLA DE ALUMNOS
+  </div>
 </div>
-
-
-
-
-
 
 </body>
 </html>

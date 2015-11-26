@@ -27,7 +27,7 @@ class LoginController extends Controller
       if ($users[0]->privilegios == 1){
         return redirect('alumno/principal');
       }elseif ($users[0]->privilegios == 2) {
-        return 'Perfil Maestro';
+        return redirect('maestro/principal');
       }
     }else {
       Session::flash('error_message', "Tus datos son incorrectos.");

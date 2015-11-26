@@ -25,13 +25,14 @@ class PromedioController extends Controller
   }
 
   public function calificaciones(){
-    $users = DB::table('curso')
-    ->select('id_materia','calificacion_1','calificacion_2','calificacion_3')
-    ->where('id', '=', session('id'))
-    ->get();
-
-    return $users;
-  }
+   $users = DB::table('curso')
+   ->select('id_materia','calificacion_1','calificacion_2','calificacion_3')
+   ->where('id', '=', session('id'))
+   ->get();
+   $tot = count($users);
+   $users = $users+[4=>$tot];
+   return $users;
+   }
 
   public function materia(){
     $users = DB::table('curso')

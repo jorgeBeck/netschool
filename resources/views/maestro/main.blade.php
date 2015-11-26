@@ -24,7 +24,13 @@
   <p>Para comenzar, selecciona una categoria del menu de la izquierda.</p>
 </div>
 
-
+<div class="grupos">
+<div class="center">
+  <a href="">Grupo</a>
+  <a href="">Grupo</a>
+  <a href="">Grupo</a>
+</div>
+</div>
 
 
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>@yield('title')</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
   <link href="../css/main.css" rel="stylesheet">
   <link href="../css/profile.css" rel="stylesheet">
   <script src="../js/main.js"></script>
