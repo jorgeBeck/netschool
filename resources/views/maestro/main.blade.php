@@ -1,39 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>@yield('title')</title>
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-  <link href="../css/main.css" rel="stylesheet">
-  <link href="../css/profile.css" rel="stylesheet">
-  <script src="../js/main.js"></script>
-</head>
-<body>
+@extends('main_maestro')
 
-<nav>
-  <h1>Bienvenido, {{ $nombre }}</h1>
-  <button><a href="../logout" type="button">Cerrar Sesion</a></button>
-</nav>
+@section('menu')
+  <div class="menu-group active">
+    <a href="principal">Inicio</a>
+  </div>
+  <div class="menu-group">
+    <a href="perfil">Perfil</a>
+  </div>
+  <div class="menu-group">
+    <a href="grupos">Grupos</a>
+  </div>
+@endsection
 
-<div class="menu">
-    @yield('menu')
-</div>
-
-<div class="center">
+@section('init')
   <h1>Bienvenido a la plataforma NetSchool</h1>
-  <p>Para comenzar, selecciona una categoria del menu de la izquierda.</p>
-</div>
-
-<div class="grupos">
-<div class="center">
-  <a href="">Grupo</a>
-  <a href="">Grupo</a>
-  <a href="">Grupo</a>
-</div>
-</div>
-
-
-
-
-</body>
-</html>
+  <p>
+    Para comenzar, eliga una opción de su menu lateral izquierdo.
+  </p>
+@endsection

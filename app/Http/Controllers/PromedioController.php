@@ -52,7 +52,7 @@ class PromedioController extends Controller
     $nombre = $this->data();
     $arreglo = $this->calificaciones();
     $nombre_materia = $this->materia();
-    return view('calificacion', compact('nombre','arreglo','nombre_materia'));
+    return view('alumno.calificaciones', compact('nombre','arreglo','nombre_materia'));
     return Helper::isLogged();
   }
 }

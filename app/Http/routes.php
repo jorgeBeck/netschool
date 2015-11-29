@@ -12,11 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('masterlogin');
 });
 
 Route::get('login', function(){
-  return view('login');
+  return view('masterlogin');
 });
 
 Route::post('login', 'LoginController@login');
@@ -29,3 +29,5 @@ Route::get('alumno/perfil', 'PerfilController@devolver');
 Route::get('maestro/principal', 'PrincipalProfController@devolver');
 Route::get('maestro/perfil', 'PerfilProfController@devolver');
 Route::get('maestro/grupos', 'GruposProfController@devolver');
+
+Route::get('maestro/grupos/{id}', 'GruposProfController@show');

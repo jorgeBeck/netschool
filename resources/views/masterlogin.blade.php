@@ -1,4 +1,4 @@
-@extends('layouts.masterlogin')
+@extends('login.login')
 
 @section('title', 'Netschool')
 

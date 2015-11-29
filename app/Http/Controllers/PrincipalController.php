@@ -26,7 +26,7 @@ class PrincipalController extends Controller
 
     public function devolver(){
       $nombre = $this->data();
-      return view('principal', compact('nombre'));
+      return view('alumno.main', compact('nombre'));
       return Helper::isLogged();
     }
 
